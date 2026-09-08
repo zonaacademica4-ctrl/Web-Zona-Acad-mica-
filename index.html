@@ -3,305 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zona Académica - Tu apoyo académico de confianza</title>
+    <title>Zona Académica | Ayuda con Tareas, Tesis y Proyectos</title>
     <style>
+        :root {
+            --primary: #1a73e8;
+            --secondary: #25d366;
+            --dark: #202124;
+            --light: #f8f9fa;
+            --gray: #5f6368;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+
         body {
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-            color: #2d3748;
-            min-height: 100vh;
-            padding-bottom: 90px;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
         }
+
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        .logo-area {
-            font-size: 1.2rem;
-            font-weight: 800;
-            color: #1a202c;
-        }
-        .hero {
-            text-align: center;
-            padding: 25px 20px 15px;
-        }
-        .badge-top {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 12px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        .hero h2 {
-            font-size: 1.8rem;
-            color: #1a202c;
-            margin-bottom: 8px;
-            line-height: 1.2;
-        }
-        .hero p {
-            font-size: 1.05rem;
-            color: #4a5568;
-            margin-bottom: 20px;
-        }
-        /* Bloque de Confianza Estilo Referencia */
-        .trust-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            padding: 0 20px 20px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .trust-card {
-            background: rgba(255, 255, 255, 0.92);
-            padding: 14px;
-            border-radius: 16px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.03);
-            font-weight: 700;
-            font-size: 0.9rem;
-            color: #2d3748;
-        }
-        .trust-card span {
-            display: block;
-            font-size: 1.15rem;
-            color: #1a202c;
-            margin-bottom: 3px;
-        }
-        /* Menús Desplegables */
-        .section-title {
-            text-align: center;
-            font-size: 1.3rem;
-            margin: 25px 20px 12px;
-            color: #1a202c;
-            font-weight: 700;
-        }
-        .accordion-container {
-            max-width: 600px;
-            margin: 0 auto 15px;
-            padding: 0 20px;
-        }
-        .accordion {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 16px;
-            margin-bottom: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.04);
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        .accordion-header {
-            padding: 16px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            font-weight: 700;
-            font-size: 1rem;
-            color: #2d3748;
-        }
-        .accordion-header::after {
-            content: '+';
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #4a5568;
-            transition: transform 0.3s;
-        }
-        .accordion.active .accordion-header::after {
-            transform: rotate(45deg);
-        }
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            padding: 0 20px;
-            background: rgba(255, 255, 255, 0.6);
-        }
-        .accordion.active .accordion-content {
-            max-height: 500px;
-            padding: 10px 20px 18px;
-        }
-        .accordion-content ul {
-            list-style: none;
-        }
-        .accordion-content ul li {
-            padding: 7px 0;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            font-size: 0.92rem;
-            color: #4a5568;
-        }
-        /* Niveles Académicos */
-        .levels-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 10px;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .level-card {
-            background: rgba(255, 255, 255, 0.92);
-            padding: 16px;
-            border-radius: 16px;
-            text-align: center;
-            font-weight: 700;
-            font-size: 1.05rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.03);
-            color: #2b6cb0;
-        }
-        /* WhatsApp Flotante */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25d366;
+            background: linear-gradient(135deg, #0d47a1, var(--primary));
             color: white;
-            width: 60px;
-            height: 60px;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn-main {
+            background-color: var(--secondary);
+            color: white;
+            padding: 15px 30px;
             border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            display: inline-block;
+            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .btn-main:hover {
+            transform: scale(1.05);
+            background-color: #20ba5a;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        section {
+            margin-bottom: 50px;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background: var(--light);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 5px solid var(--primary);
+        }
+
+        .service-card h3 {
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .steps-list {
+            list-style: none;
+            counter-reset: step-counter;
+        }
+
+        .steps-list li {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        .steps-list li::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: var(--primary);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            z-index: 1000;
-            text-decoration: none;
+            font-weight: bold;
         }
+
+        /* Botón Flotante de WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--secondary);
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 100;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
         footer {
             text-align: center;
-            padding: 25px 20px;
-            color: #4a5568;
-            font-size: 0.85rem;
+            padding: 30px;
+            background: var(--dark);
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #8ab4f8;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-area">📚 Zona Académica</div>
+        <h1>Zona Académica</h1>
+        <p>¿No entiendes tu tarea? Te ayudo con tareas, tesis y proyectos universitarios.</p>
+        <a href="https://wa.me/584125221950?text=Hola,%20necesito%20ayuda%20con%20una%20tarea/tesis" class="btn-main" target="_blank">Pedir cotización por WhatsApp</a>
     </header>
 
-    <section class="hero">
-        <div class="badge-top">🤓💻 Tu apoyo académico de confianza</div>
-        <h2>¿No le entiendes a tu tarea?</h2>
-        <p>¡No te estreses! Yo te ayudo.</p>
-    </section>
-
-    <!-- Bloque de Confianza -->
-    <div class="trust-grid">
-        <div class="trust-card">
-            <span>⭐ 4.9/5.0</span>
-            Calificación promedio
-        </div>
-        <div class="trust-card">
-            <span>🎓 +10,000</span>
-            Estudiantes felices
-        </div>
-        <div class="trust-card">
-            <span>🔒 100%</span>
-            Confidencial
-        </div>
-        <div class="trust-card">
-            <span>⏱️ 100%</span>
-            Puntualidad garantizada
-        </div>
-    </div>
-
-    <h3 class="section-title">Nuestros Servicios</h3>
-
-    <!-- Menús Desplegables -->
-    <div class="accordion-container">
-        <div class="accordion">
-            <div class="accordion-header">🔬 Metodología de la investigación y tesis</div>
-            <div class="accordion-content">
-                <ul>
-                    <li>Planteamiento del problema</li>
-                    <li>Justificación, delimitación y objetivos</li>
-                    <li>Marco teórico y estado del arte</li>
-                    <li>Diseño metodológico y técnicas</li>
-                    <li>Análisis, discusión y conclusiones</li>
-                    <li>Normas APA, IEEE, Vancouver, Chicago</li>
-                </ul>
+    <div class="container">
+        
+        <section>
+            <h2>¿En qué podemos ayudarte?</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Tareas y Ensayos</h3>
+                    <p>Resolución de ejercicios, monografías, ensayos y trabajos prácticos de cualquier materia.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Tesis y Grado</h3>
+                    <p>Asesoría integral, redacción de capítulos, normas APA, análisis de datos y corrección de estilo.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Proyectos Especiales</h3>
+                    <p>Investigaciones de mercado, programación, presentaciones ejecutivas y maquetas conceptuales.</p>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="accordion">
-            <div class="accordion-header">📊 Matemáticas, estadística y cuantitativo</div>
-            <div class="accordion-content">
-                <ul>
-                    <li>Álgebra, cálculo y ecuaciones diferenciales</li>
-                    <li>Estadística descriptiva e inferencial</li>
-                    <li>SPSS, Excel avanzado y análisis de datos</li>
-                </ul>
-            </div>
-        </div>
+        <section>
+            <h2>¿Cómo Funciona?</h2>
+            <ul class="steps-list">
+                <li><strong>Envíanos los detalles:</strong> Escríbenos por WhatsApp con los requerimientos de tu trabajo y la fecha límite de entrega.</li>
+                <li><strong>Recibe tu cotización:</strong> Evaluamos la complejidad del caso y te damos un presupuesto sin compromiso de inmediato.</li>
+                <li><strong>Aprobación y entrega:</strong> Realizamos el trabajo con garantía de originalidad, calidad y puntualidad estricta.</li>
+            </ul>
+        </section>
 
-        <div class="accordion">
-            <div class="accordion-header">💼 Administración y Negocios</div>
-            <div class="accordion-content">
-                <ul>
-                    <li>Planes de negocio y marketing</li>
-                    <li>Contaduría, finanzas y costos</li>
-                    <li>Economía y proyectos de inversión</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="accordion">
-            <div class="accordion-header">⚙️ Ingenierías y áreas técnicas</div>
-            <div class="accordion-content">
-                <ul>
-                    <li>Ingeniería industrial y de sistemas</li>
-                    <li>Programación, software y bases de datos</li>
-                    <li>Física, química y termodinámica</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <h3 class="section-title">Apoyo para distintos niveles académicos</h3>
-    
-    <div class="levels-grid">
-        <div class="level-card">Licenciaturas</div>
-        <div class="level-card">Ingenierías</div>
-        <div class="level-card">Maestrías</div>
-        <div class="level-card">Especialidades</div>
     </div>
 
     <footer>
-        <p>Tareas, proyectos, tesis, presentaciones, investigaciones y mucho más.</p>
+        <p>&copy; 2026 Zona Académica. Todos los derechos reservados.</p>
+        <p>Contacto directo: <a href="mailto:zonaacademica4@gmail.com">zonaacademica4@gmail.com</a> | WhatsApp: +58 412-5221950</p>
     </footer>
 
-    <a href="https://wa.me/584121234567?text=Hola,%20necesito%20ayuda%20con%20una%20tarea%20académica" class="whatsapp-float" target="_blank">
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/584125221950?text=Hola,%20necesito%20información%20sobre%20sus%20servicios%20académicos" class="whatsapp-float" target="_blank" title="Escríbenos por WhatsApp">
         💬
     </a>
 
-    <script>
-        const accordions = document.querySelectorAll('.accordion');
-        accordions.forEach(acc => {
-            const header = acc.querySelector('.accordion-header');
-            header.addEventListener('click', () => {
-                accordions.forEach(item => {
-                    if (item !== acc) item.classList.remove('active');
-                });
-                acc.classList.toggle('active');
-            });
-        });
-    </script>
 </body>
 </html>
+
