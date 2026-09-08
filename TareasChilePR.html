@@ -3,502 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zona Académica | Siempre de la mano Contigo</title>
+    <title>Áreas de Servicio</title>
     <style>
-        :root {
-            --primary-color: #1e3a8a; /* Azul corporativo profundo */
-            --accent-color: #f97316;  /* Naranja vibrante */
-            --bg-light: #f8fafc;      
-            --card-bg: #ffffff;
-            --text-main: #1e293b;
-            --text-gray: #64748b;
-            --whatsapp-green: #25d366;
-            --border-color: #e2e8f0;
-        }
-
-        * {
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            text-align: center;
         }
-
-        body {
-            background-color: var(--bg-light);
-            color: var(--text-main);
-            line-height: 1.6;
-            padding-bottom: 80px;
-        }
-
-        /* Barra de navegación superior */
-        nav {
-            background: #ffffff;
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--border-color);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
-
-        .nav-logo-text {
-            font-size: 1.25rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        .nav-btn {
-            background-color: var(--whatsapp-green);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: background-color 0.2s;
-            box-shadow: 0 2px 5px rgba(37, 211, 102, 0.3);
-        }
-
-        .nav-btn:hover {
-            background-color: #20ba5a;
-        }
-
-        /* Cabecera Principal con Estilo Universitario de Fondo (Patrón de Libros/Lápices) */
         header {
-            position: relative;
-            background-color: #1e3a8a;
-            /* Patrón de fondo SVG sutil con siluetas universitarias (libros, lápices, notas) */
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M20 20h20v20H20zM60 20h20v20H60zM20 60h20v20H20zM60 60h20v20H60z'/%3E%3Cpath d='M10 10h80v80H10zM50 0v100M0 50h100' stroke='%23ffffff' stroke-width='0.5' stroke-opacity='0.05'/%3E%3Ctext x='15' y='35' font-size='16'%3E📖%3C/text%3E%3Ctext x='65' y='35' font-size='16'%3E✏️%3C/text%3E%3Ctext x='15' y='85' font-size='16'%3E📐%3C/text%3E%3Ctext x='65' y='85' font-size='16'%3E🎓%3C/text%3E%3C/g%3E%3C/svg%3E"), 
-                              linear-gradient(135deg, #1e3a8a, #1d4ed8);
+            background-color: #004080;
             color: white;
-            text-align: center;
-            padding: 80px 20px 60px 20px;
-            border-bottom: 4px solid var(--accent-color);
+            padding: 2rem 1rem;
         }
-
-        header h1 {
-            font-size: 2.3rem;
-            margin-bottom: 15px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        main {
+            padding: 2rem;
         }
-
-        header p {
-            font-size: 1.15rem;
-            margin-bottom: 30px;
-            color: #cbd5e1;
-            max-width: 650px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .btn-main {
-            background-color: var(--whatsapp-green);
-            color: white;
-            padding: 16px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1.15rem;
-            font-weight: bold;
+        .whatsapp-btn {
             display: inline-block;
-            transition: transform 0.2s, background-color 0.2s;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
-        }
-
-        .btn-main:hover {
-            transform: scale(1.03);
-            background-color: #20ba5a;
-        }
-
-        .container {
-            max-width: 1050px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        section {
-            margin-bottom: 40px;
-            background: var(--card-bg);
-            padding: 45px 35px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            border: 1px solid var(--border-color);
-        }
-
-        h2 {
-            text-align: center;
-            color: var(--primary-color);
-            margin-bottom: 35px;
-            font-size: 2rem;
-        }
-
-        /* Listas Desplegables Estilo Acordeón */
-        .accordion-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .accordion-item {
-            background: #f8fafc;
-            border: 1px solid var(--border-color);
-            border-left: 6px solid var(--accent-color);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: box-shadow 0.2s;
-        }
-
-        .accordion-item:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-
-        .accordion-header {
-            width: 100%;
-            background: none;
-            border: none;
-            padding: 20px;
-            text-align: left;
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: var(--text-main);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .accordion-header::after {
-            content: '+';
-            font-size: 1.4rem;
-            color: var(--accent-color);
-            font-weight: bold;
-            transition: transform 0.3s;
-        }
-
-        .accordion-item.active .accordion-header::after {
-            transform: rotate(45deg);
-        }
-
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
-            padding: 0 25px;
-            color: var(--text-gray);
-            font-size: 0.95rem;
-        }
-
-        .accordion-item.active .accordion-content {
-            max-height: 1200px;
-            padding: 0 25px 25px 25px;
-        }
-
-        /* Sublistas de materias */
-        .sublist {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .sublist li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 10px;
-            color: var(--text-gray);
-            font-size: 0.95rem;
-        }
-
-        .sublist li::before {
-            content: "•";
-            color: var(--accent-color);
-            font-weight: bold;
-            font-size: 1.2rem;
-            position: absolute;
-            left: 0;
-            top: -2px;
-        }
-
-        .category-subtitle {
-            font-weight: bold;
-            color: var(--primary-color);
-            margin-top: 15px;
-            margin-bottom: 8px;
-            font-size: 1.05rem;
-        }
-
-        /* Bloque de Garantías */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            text-align: center;
-        }
-
-        .feature-box {
-            padding: 25px 20px;
-            background: #f8fafc;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            border-top: 4px solid var(--primary-color);
-        }
-
-        .feature-box h4 {
-            color: var(--primary-color);
-            margin-bottom: 8px;
-            font-size: 1.1rem;
-        }
-
-        .feature-box p {
-            color: var(--text-gray);
-            font-size: 0.9rem;
-        }
-
-        /* Pasos de Cómo Funciona */
-        .steps-list {
-            list-style: none;
-            counter-reset: step-counter;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .steps-list li {
-            position: relative;
-            padding-left: 65px;
-            margin-bottom: 30px;
-            font-size: 1.1rem;
-        }
-
-        .steps-list li::before {
-            counter-increment: step-counter;
-            content: counter(step-counter);
-            position: absolute;
-            left: 0;
-            top: 0;
-            background: var(--primary-color);
+            background-color: #25d366;
             color: white;
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 12px 24px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
             font-weight: bold;
-            font-size: 1.1rem;
         }
-
-        .steps-list li strong {
-            display: block;
-            margin-bottom: 5px;
-            color: var(--text-main);
-        }
-
-        .steps-list li p {
-            color: var(--text-gray);
-            font-size: 0.95rem;
-        }
-
-        /* Botón Flotante de WhatsApp */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background-color: var(--whatsapp-green);
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-            z-index: 1000;
-            text-decoration: none;
-            transition: transform 0.3s;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
-
-        footer {
-            text-align: center;
-            padding: 35px;
-            background: #1e293b;
-            color: #94a3b8;
-            font-size: 0.9rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        footer a {
-            color: #38bdf8;
-            text-decoration: none;
+        .whatsapp-btn:hover {
+            background-color: #1ebe5d;
         }
     </style>
 </head>
 <body>
 
-    <!-- Navbar Superior -->
-    <nav>
-        <a href="#" class="nav-logo-text">📚 Zona Académica</a>
-        <a href="https://wa.me/584125221950?text=Hola,%20necesito%20ayuda%20urgente%20con%20un%20trabajo" class="nav-btn" target="_blank">Contactar</a>
-    </nav>
-
-    <!-- Cabecera Principal con Temática Universitaria -->
     <header>
-        <h1>¿No entiendes tu tarea? Te ayudo con tareas, tesis y proyectos</h1>
-        <p>Siempre de la mano contigo. Soluciones académicas profesionales, puntuales y 100% confidenciales.</p>
-        <a href="https://wa.me/584125221950?text=Hola,%20necesito%20una%20cotización%20para%20un%20trabajo" class="btn-main" target="_blank">📲 Pedir cotización por WhatsApp</a>
+        <h1>Áreas de Cobertura y Servicios</h1>
+        <p>Atención académica y profesional personalizada</p>
     </header>
 
-    <div class="container">
+    <main>
+        <h2>Contáctanos directamente</h2>
+        <p>¿Tienes dudas o necesitas asesoría inmediata? Escríbenos a nuestro canal oficial de atención.</p>
         
-        <!-- Bloque de Servicios con Asignaturas del Flyer -->
-        <section>
-            <h2>Asignaturas Disponibles</h2>
-            <div class="accordion-container">
-                
-                <!-- Ingeniería, Electrónica y Electricidad -->
-                <div class="accordion-item">
-                    <button class="accordion-header">📐 Ingeniería, Electrónica y Electricidad</button>
-                    <div class="accordion-content">
-                        <div class="category-subtitle">Ingeniería:</div>
-                        <ul class="sublist">
-                            <li>Cálculo (Todos)</li>
-                            <li>Química y Bioquímica</li>
-                            <li>Operaciones Unitarias y Fenómenos de Transporte</li>
-                            <li>Física, Estática y Dinámica</li>
-                            <li>Estadística y Probabilidad</li>
-                            <li>Balance de masas</li>
-                            <li>Inglés Avanzado</li>
-                            <li>Mecánica de Fluidos</li>
-                            <li>Transferencia de Calor y Termodinámica</li>
-                        </ul>
-                        <div class="category-subtitle">Electrónica y Electricidad:</div>
-                        <ul class="sublist">
-                            <li>Sistemas de Control análogo y digital</li>
-                            <li>Redes de datos y Campos electromagnéticos</li>
-                            <li>Circuitos Lógicos, PLC y Programación Ladder</li>
-                            <li>Neumática e Hidráulica</li>
-                            <li>Electrotecnia</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Programación, Software y Programas -->
-                <div class="accordion-item">
-                    <button class="accordion-header">💻 Programación, Software y Programas</button>
-                    <div class="accordion-content">
-                        <div class="category-subtitle">Programación:</div>
-                        <ul class="sublist">
-                            <li>Python, JavaScript, Java, C++ y HTML</li>
-                            <li>Visual Studio Code</li>
-                        </ul>
-                        <div class="category-subtitle">Software y Programas:</div>
-                        <ul class="sublist">
-                            <li>SketchUp, AutoCAD, Solidworks, Mathlab y Geogebra</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Economía, Finanzas y Redacción -->
-                <div class="accordion-item">
-                    <button class="accordion-header">📈 Economía, Finanzas, Redacción y Tesis</button>
-                    <div class="accordion-content">
-                        <div class="category-subtitle">Economía y Finanzas:</div>
-                        <ul class="sublist">
-                            <li>Microeconomía, Macroeconomía y Econometría</li>
-                            <li>Análisis de Mercados y Comercio</li>
-                        </ul>
-                        <div class="category-subtitle">Redacción y Edición de:</div>
-                        <ul class="sublist">
-                            <li>Tesis, Monografías e Infografías</li>
-                            <li>Artículos Científicos y mucho más</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Medicina y Enfermería -->
-                <div class="accordion-item">
-                    <button class="accordion-header">🩺 Medicina y Enfermería</button>
-                    <div class="accordion-content">
-                        <ul class="sublist">
-                            <li>Fisiología, Psicología e Histología</li>
-                            <li>Estudio de Casos</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Bloque de Garantías -->
-        <section>
-            <h2>¿Por qué confiar en Zona Académica?</h2>
-            <div class="features-grid">
-                <div class="feature-box">
-                    <h4>🔒 Confidencialidad</h4>
-                    <p>Tus datos y trabajos se manejan bajo absoluta discreción y privacidad.</p>
-                </div>
-                <div class="feature-box">
-                    <h4>⏱️ Puntualidad</h4>
-                    <p>Entregas estrictamente en el plazo acordado para que nunca pierdas tu nota.</p>
-                </div>
-                <div class="feature-box">
-                    <h4>✔️ Cero Plagio</h4>
-                    <p>Contenido original redactado desde cero y verificado con herramientas de control.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Bloque de Cómo Funciona -->
-        <section>
-            <h2>¿Cómo Funciona?</h2>
-            <ul class="steps-list">
-                <li>
-                    <strong>1. Envíanos los detalles</strong>
-                    <p>Escríbenos por WhatsApp compartiendo la información de tu asignación, rúbrica y fecha límite.</p>
-                </li>
-                <li>
-                    <strong>2. Recibe tu cotización</strong>
-                    <p>Evaluamos la complejidad y el esfuerzo requerido para darte un presupuesto justo sin compromiso.</p>
-                </li>
-                <li>
-                    <strong>3. Aprobación y entrega</strong>
-                    <p>Realizamos el trabajo de forma profesional garantizando calidad óptima hasta la entrega final.</p>
-                </li>
-            </ul>
-        </section>
-
-    </div>
-
-    <footer>
-        <p>&copy; 2026 Zona Académica. Todos los derechos reservados.</p>
-        <p>WhatsApp: +58 412-156-5733</p>
-    </footer>
-
-    <!-- Botón flotante de WhatsApp -->
-    <a href="https://wa.me/584125221950?text=Hola,%20quisiera%20consultar%20sobre%20sus%20servicios" class="whatsapp-float" target="_blank" title="Escríbenos por WhatsApp">
-        💬
-    </a>
-
-    <!-- Script para desplegar las listas -->
-    <script>
-        const headers = document.querySelectorAll('.accordion-header');
-        headers.forEach(header => {
-            header.addEventListener('click', () => {
-                const item = header.parentElement;
-                item.classList.toggle('active');
-            });
-        });
-    </script>
+        <!-- Enlace actualizado con el nuevo número de WhatsApp -->
+        <a href="https://wa.me/19172794166" class="whatsapp-btn" target="_blank">Escribir por WhatsApp</a>
+    </main>
 
 </body>
 </html>
+
