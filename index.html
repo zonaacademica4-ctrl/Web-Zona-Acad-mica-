@@ -193,7 +193,7 @@
         }
 
         .accordion-item.active .accordion-content {
-            max-height: 500px;
+            max-height: 1200px;
             padding: 0 25px 25px 25px;
         }
 
@@ -206,7 +206,7 @@
         .sublist li {
             position: relative;
             padding-left: 20px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             color: var(--text-gray);
             font-size: 0.95rem;
         }
@@ -219,6 +219,14 @@
             position: absolute;
             left: 0;
             top: -2px;
+        }
+
+        .category-subtitle {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-top: 15px;
+            margin-bottom: 8px;
+            font-size: 1.05rem;
         }
 
         /* Bloque de Garantías */
@@ -348,51 +356,78 @@
 
     <div class="container">
         
-        <!-- Bloque de Servicios con Listas Desplegables de Materias -->
+        <!-- Bloque de Servicios con Asignaturas del Flyer -->
         <section>
-            <h2>Nuestros Servicios</h2>
+            <h2>Asignaturas Disponibles</h2>
             <div class="accordion-container">
                 
-                <!-- Desplegable 1 -->
+                <!-- Ingeniería, Electrónica y Electricidad -->
                 <div class="accordion-item">
-                    <button class="accordion-header">Tareas y Prácticas</button>
+                    <button class="accordion-header">Ingeniería, Electrónica y Electricidad</button>
                     <div class="accordion-content">
+                        <div class="category-subtitle">Ingeniería:</div>
                         <ul class="sublist">
-                            <li>Matemáticas, Cálculo y Álgebra lineal</li>
-                            <li>Estadística descriptiva e inferencial</li>
-                            <li>Física, Química y Biología general</li>
-                            <li>Resolución de guías de ejercicios y problemas</li>
-                            <li>Ensayos, cuestionarios y trabajos prácticos urgentes</li>
+                            <li>Cálculo (Todos)</li>
+                            <li>Química y Bioquímica</li>
+                            <li>Operaciones Unitarias y Fenómenos de Transporte</li>
+                            <li>Física, Estática y Dinámica</li>
+                            <li>Estadística y Probabilidad</li>
+                            <li>Balance de masas</li>
+                            <li>Inglés Avanzado</li>
+                            <li>Mecánica de Fluidos</li>
+                            <li>Transferencia de Calor y Termodinámica</li>
+                        </ul>
+                        <div class="category-subtitle">Electrónica y Electricidad:</div>
+                        <ul class="sublist">
+                            <li>Sistemas de Control análogo y digital</li>
+                            <li>Redes de datos y Campos electromagnéticos</li>
+                            <li>Circuitos Lógicos, PLC y Programación Ladder</li>
+                            <li>Neumática e Hidráulica</li>
+                            <li>Electrotecnia</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Desplegable 2 -->
+                <!-- Programación, Software y Programas -->
                 <div class="accordion-item">
-                    <button class="accordion-header">Metodología de la Investigación y Tesis</button>
+                    <button class="accordion-header">Programación, Software y Programas</button>
                     <div class="accordion-content">
+                        <div class="category-subtitle">Programación:</div>
                         <ul class="sublist">
-                            <li>Metodología de la investigación (cuantitativa, cualitativa y mixta)</li>
-                            <li>Planteamiento del problema</li>
-                            <li>Justificación, delimitación y objetivos</li>
-                            <li>Marco teórico y estado del arte</li>
-                            <li>Diseño metodológico y variables</li>
-                            <li>Instrumentos de investigación (encuestas, entrevistas, etc.)</li>
-                            <li>Análisis e interpretación de resultados bajo normas APA</li>
+                            <li>Python, JavaScript, Java, C++ y HTML</li>
+                            <li>Visual Studio Code</li>
+                        </ul>
+                        <div class="category-subtitle">Software y Programas:</div>
+                        <ul class="sublist">
+                            <li>SketchUp, AutoCAD, Solidworks, Mathlab y Geogebra</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Desplegable 3 -->
+                <!-- Economía, Finanzas y Redacción -->
                 <div class="accordion-item">
-                    <button class="accordion-header">Proyectos y Programación</button>
+                    <button class="accordion-header">Economía, Finanzas, Redacción y Tesis</button>
+                    <div class="accordion-content">
+                        <div class="category-subtitle">Economía y Finanzas:</div>
+                        <ul class="sublist">
+                            <li>Microeconomía, Macroeconomía y Econometría</li>
+                            <li>Análisis de Mercados y Comercio</li>
+                        </ul>
+                        <div class="category-subtitle">Redacción y Edición de:</div>
+                        <ul class="sublist">
+                            <li>Tesis, Monografías e Infografías</li>
+                            <li>Artículos Científicos y mucho más</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Medicina y Enfermería -->
+                <div class="accordion-item">
+                    <button class="accordion-header">Medicina y Enfermería</button>
                     <div class="accordion-content">
                         <ul class="sublist">
-                            <li>Desarrollo de software y codificación</li>
-                            <li>Maquetas conceptuales y diseños técnicos</li>
-                            <li>Presentaciones ejecutivas profesionales</li>
-                            <li>Informes de pasantías y monografías</li>
-                            <li>Proyectos especializados de ingeniería y ciencias sociales</li>
+                            <li>Fisiología, Psicología e Histología</li>
+                            <li>Estudio de Casos</li>
                         </ul>
                     </div>
                 </div>
@@ -442,7 +477,7 @@
 
     <footer>
         <p>&copy; 2026 Zona Académica. Todos los derechos reservados.</p>
-        <p>Correo de contacto: <a href="mailto:zonaacademica4@gmail.com">zonaacademica4@gmail.com</a> | WhatsApp: +58 412-5221950</p>
+        <p>WhatsApp: +58 412-156-5733</p>
     </footer>
 
     <!-- Botón flotante de WhatsApp -->
@@ -463,6 +498,7 @@
 
 </body>
 </html>
+
 
 
 
