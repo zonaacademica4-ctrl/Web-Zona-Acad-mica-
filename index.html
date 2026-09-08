@@ -11,6 +11,7 @@
             --dark: #202124;
             --light: #f8f9fa;
             --gray: #5f6368;
+            --border-color: #dadce0;
         }
 
         * {
@@ -26,35 +27,77 @@
             line-height: 1.6;
         }
 
+        /* Barra de navegación superior */
+        nav {
+            background: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-btn {
+            background-color: var(--secondary);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background-color 0.2s;
+        }
+
+        .nav-btn:hover {
+            background-color: #20ba5a;
+        }
+
+        /* Cabecera Principal */
         header {
             background: linear-gradient(135deg, #0d47a1, var(--primary));
             color: white;
             text-align: center;
-            padding: 80px 20px;
+            padding: 90px 20px;
         }
 
         header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+            font-size: 2.6rem;
+            margin-bottom: 15px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         header p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
+            font-size: 1.25rem;
+            margin-bottom: 35px;
+            opacity: 0.95;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .btn-main {
             background-color: var(--secondary);
             color: white;
-            padding: 15px 30px;
+            padding: 16px 35px;
             border-radius: 50px;
             text-decoration: none;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: bold;
             display: inline-block;
             transition: transform 0.2s, background-color 0.2s;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
 
         .btn-main:hover {
@@ -63,53 +106,90 @@
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1050px;
             margin: 0 auto;
-            padding: 50px 20px;
+            padding: 40px 20px;
         }
 
         section {
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             background: white;
-            padding: 40px;
+            padding: 45px 35px;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            border: 1px solid var(--border-color);
         }
 
         h2 {
             text-align: center;
             color: var(--primary);
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             font-size: 2rem;
         }
 
+        /* Servicios Grid */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
 
         .service-card {
             background: var(--light);
-            padding: 25px;
-            border-radius: 8px;
+            padding: 30px;
+            border-radius: 10px;
             border-left: 5px solid var(--primary);
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
         }
 
         .service-card h3 {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             color: var(--dark);
+            font-size: 1.2rem;
         }
 
+        .service-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Bloque de Garantías */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .feature-box {
+            padding: 20px;
+        }
+
+        .feature-box h4 {
+            color: var(--primary);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .feature-box p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Pasos de Cómo Funciona */
         .steps-list {
             list-style: none;
             counter-reset: step-counter;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .steps-list li {
             position: relative;
-            padding-left: 50px;
-            margin-bottom: 25px;
+            padding-left: 65px;
+            margin-bottom: 30px;
             font-size: 1.1rem;
         }
 
@@ -121,13 +201,25 @@
             top: 0;
             background: var(--primary);
             color: white;
-            width: 35px;
-            height: 35px;
+            width: 42px;
+            height: 42px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .steps-list li strong {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+
+        .steps-list li p {
+            color: var(--gray);
+            font-size: 0.95rem;
         }
 
         /* Botón Flotante de WhatsApp */
@@ -143,7 +235,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 35px;
+            font-size: 32px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             z-index: 100;
             text-decoration: none;
@@ -156,7 +248,7 @@
 
         footer {
             text-align: center;
-            padding: 30px;
+            padding: 35px;
             background: var(--dark);
             color: white;
             font-size: 0.9rem;
@@ -170,38 +262,75 @@
 </head>
 <body>
 
+    <!-- Navbar Superior -->
+    <nav>
+        <a href="#" class="logo">📚 Zona Académica</a>
+        <a href="https://wa.me/584125221950?text=Hola,%20necesito%20ayuda%20urgente%20con%20un%20trabajo" class="nav-btn" target="_blank">Contactar</a>
+    </nav>
+
+    <!-- Cabecera Principal -->
     <header>
-        <h1>Zona Académica</h1>
-        <p>¿No entiendes tu tarea? Te ayudo con tareas, tesis y proyectos universitarios.</p>
-        <a href="https://wa.me/584125221950?text=Hola,%20necesito%20ayuda%20con%20una%20tarea/tesis" class="btn-main" target="_blank">Pedir cotización por WhatsApp</a>
+        <h1>¿No entiendes tu tarea? Te ayudo con tareas, tesis y proyectos</h1>
+        <p>Soluciones académicas profesionales, puntuales y 100% confidenciales para estudiantes universitarios.</p>
+        <a href="https://wa.me/584125221950?text=Hola,%20necesito%20una%20cotización%20para%20un%20trabajo" class="btn-main" target="_blank">📲 Pedir cotización por WhatsApp</a>
     </header>
 
     <div class="container">
         
+        <!-- Bloque de Servicios -->
         <section>
-            <h2>¿En qué podemos ayudarte?</h2>
+            <h2>Nuestros Servicios</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <h3>Tareas y Ensayos</h3>
-                    <p>Resolución de ejercicios, monografías, ensayos y trabajos prácticos de cualquier materia.</p>
+                    <h3>Tareas y Prácticas</h3>
+                    <p>Resolución de guías de ejercicios, problemas matemáticos, estadísticas, ensayos y cuestionarios urgentes.</p>
                 </div>
                 <div class="service-card">
                     <h3>Tesis y Grado</h3>
-                    <p>Asesoría integral, redacción de capítulos, normas APA, análisis de datos y corrección de estilo.</p>
+                    <p>Asesoría integral desde el anteproyecto, redacción de capítulos, marcos teóricos, análisis de datos y normas APA.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Proyectos Especiales</h3>
-                    <p>Investigaciones de mercado, programación, presentaciones ejecutivas y maquetas conceptuales.</p>
+                    <h3>Proyectos y Programación</h3>
+                    <p>Desarrollo de software, maquetas conceptuales, presentaciones ejecutivas, informes de pasantías y monografías.</p>
                 </div>
             </div>
         </section>
 
+        <!-- Bloque de Garantías (Nuevo bloque clave del modelo) -->
+        <section>
+            <h2>¿Por qué confiar en Zona Académica?</h2>
+            <div class="features-grid">
+                <div class="feature-box">
+                    <h4>🔒 Confidencialidad</h4>
+                    <p>Tus datos y trabajos se manejan bajo absoluta discreción y privacidad.</p>
+                </div>
+                <div class="feature-box">
+                    <h4>⏱️ Puntualidad</h4>
+                    <p>Entregas estrictamente en el plazo acordado para que nunca pierdas tu nota.</p>
+                </div>
+                <div class="feature-box">
+                    <h4>✔️ Cero Plagio</h4>
+                    <p>Contenido original redactado desde cero y verificado con herramientas de control.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bloque de Cómo Funciona -->
         <section>
             <h2>¿Cómo Funciona?</h2>
             <ul class="steps-list">
-                <li><strong>Envíanos los detalles:</strong> Escríbenos por WhatsApp con los requerimientos de tu trabajo y la fecha límite de entrega.</li>
-                <li><strong>Recibe tu cotización:</strong> Evaluamos la complejidad del caso y te damos un presupuesto sin compromiso de inmediato.</li>
-                <li><strong>Aprobación y entrega:</strong> Realizamos el trabajo con garantía de originalidad, calidad y puntualidad estricta.</li>
+                <li>
+                    <strong>1. Envíanos los detalles</strong>
+                    <p>Escríbenos por WhatsApp compartiendo la información de tu asignación, rúbrica y fecha límite.</p>
+                </li>
+                <li>
+                    <strong>2. Recibe tu cotización</strong>
+                    <p>Evaluamos la complejidad y el esfuerzo requerido para darte un presupuesto justo sin compromiso.</p>
+                </li>
+                <li>
+                    <strong>3. Aprobación y entrega</strong>
+                    <p>Realizamos el trabajo de forma profesional garantizando calidad óptima hasta la entrega final.</p>
+                </li>
             </ul>
         </section>
 
@@ -209,14 +338,15 @@
 
     <footer>
         <p>&copy; 2026 Zona Académica. Todos los derechos reservados.</p>
-        <p>Contacto directo: <a href="mailto:zonaacademica4@gmail.com">zonaacademica4@gmail.com</a> | WhatsApp: +58 412-5221950</p>
+        <p>Correo de contacto: <a href="mailto:zonaacademica4@gmail.com">zonaacademica4@gmail.com</a> | WhatsApp: +58 412-5221950</p>
     </footer>
 
     <!-- Botón flotante de WhatsApp -->
-    <a href="https://wa.me/584125221950?text=Hola,%20necesito%20información%20sobre%20sus%20servicios%20académicos" class="whatsapp-float" target="_blank" title="Escríbenos por WhatsApp">
+    <a href="https://wa.me/584125221950?text=Hola,%20quisiera%20consultar%20sobre%20sus%20servicios" class="whatsapp-float" target="_blank" title="Escríbenos por WhatsApp">
         💬
     </a>
 
 </body>
 </html>
+
 
