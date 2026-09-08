@@ -1,0 +1,237 @@
+<!DOC<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zona Académica | Ayuda con Tareas, Tesis y Proyectos</title>
+    <style>
+        :root {
+            --primary: #1a73e8;
+            --secondary: #25d366;
+            --dark: #202124;
+            --light: #f8f9fa;
+            --gray: #5f6368;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0d47a1, var(--primary));
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn-main {
+            background-color: var(--secondary);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            display: inline-block;
+            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .btn-main:hover {
+            transform: scale(1.05);
+            background-color: #20ba5a;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        section {
+            margin-bottom: 50px;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        /* Cuadrícula exacta de 3 elementos */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card-item {
+            background: var(--light);
+            padding: 25px;
+            border-radius: 8px;
+            border-top: 4px solid var(--primary);
+            text-align: center;
+        }
+
+        .card-item h3 {
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        /* Lista de 3 pasos numerados atractivos */
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .step-box {
+            background: var(--light);
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            background: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin: 0 auto 15px auto;
+            font-size: 1.2rem;
+        }
+
+        /* Botón Flotante de WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--secondary);
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 100;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: var(--dark);
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #8ab4f8;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Zona Académica</h1>
+        <p>¿No entiendes tu tarea? Te ayudo con tareas, tesis y proyectos universitarios.</p>
+        <a href="https://wa.me/584125221950?text=Hola,%20necesito%20ayuda%20con%20una%20tarea/tesis" class="btn-main" target="_blank">Pedir cotización por WhatsApp</a>
+    </header>
+
+    <div class="container">
+        
+        <!-- Sección de Servicios (3 elementos) -->
+        <section>
+            <h2>¿En qué podemos ayudarte?</h2>
+            <div class="grid-3">
+                <div class="card-item">
+                    <h3>1. Tareas y Ensayos</h3>
+                    <p>Resolución de ejercicios, monografías, ensayos y trabajos prácticos de cualquier materia.</p>
+                </div>
+                <div class="card-item">
+                    <h3>2. Tesis y Grado</h3>
+                    <p>Asesoría integral, redacción de capítulos, normas APA, análisis de datos y corrección de estilo.</p>
+                </div>
+                <div class="card-item">
+                    <h3>3. Proyectos Especiales</h3>
+                    <p>Investigaciones de mercado, programación, presentaciones ejecutivas y maquetas conceptuales.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Cómo Funciona (3 pasos en bloques organizados) -->
+        <section>
+            <h2>¿Cómo Funciona?</h2>
+            <div class="steps-container">
+                <div class="step-box">
+                    <div class="step-number">1</div>
+                    <h3>Envíanos los detalles</h3>
+                    <p>Escríbenos por WhatsApp con los requerimientos de tu trabajo y la fecha límite de entrega.</p>
+                </div>
+                <div class="step-box">
+                    <div class="step-number">2</div>
+                    <h3>Recibe tu cotización</h3>
+                    <p>Evaluamos la complejidad del caso y te damos un presupuesto sin compromiso de inmediato.</p>
+                </div>
+                <div class="step-box">
+                    <div class="step-number">3</div>
+                    <h3>Aprobación y entrega</h3>
+                    <p>Realizamos el trabajo con garantía de originalidad, calidad y puntualidad estricta.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Zona Académica. Todos los derechos reservados.</p>
+        <p>Contacto directo: <a href="mailto:zonaacademica4@gmail.com">zonaacademica4@gmail.com</a> | WhatsApp: +58 412-5221950</p>
+    </footer>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/584125221950?text=Hola,%20necesito%20información%20sobre%20sus%20servicios%20académicos" class="whatsapp-float" target="_blank" title="Escríbenos por WhatsApp">
+        💬
+    </a>
+
+</body>
+</html>
