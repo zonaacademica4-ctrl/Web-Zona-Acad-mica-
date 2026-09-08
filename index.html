@@ -7,7 +7,6 @@
     <style>
         :root {
             --primary-red: #d32f2f;
-            --primary-dark: #b71c1c;
             --bg-light: #f4f6f9;
             --card-bg: #ffffff;
             --text-main: #212529;
@@ -32,7 +31,7 @@
         /* Barra de navegación superior */
         nav {
             background: #ffffff;
-            padding: 12px 30px;
+            padding: 15px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -43,21 +42,11 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
 
-        .nav-logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            color: var(--text-main);
+        .nav-logo-text {
+            font-size: 1.25rem;
             font-weight: bold;
-            font-size: 1.15rem;
-        }
-
-        .nav-logo-container img {
-            height: 40px;
-            width: auto;
-            border-radius: 6px;
-            object-fit: contain;
+            color: var(--primary-red);
+            text-decoration: none;
         }
 
         .nav-btn {
@@ -68,13 +57,12 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 0.95rem;
-            transition: background-color 0.2s, transform 0.2s;
+            transition: background-color 0.2s;
             box-shadow: 0 2px 5px rgba(37, 211, 102, 0.3);
         }
 
         .nav-btn:hover {
             background-color: #20ba5a;
-            transform: translateY(-1px);
         }
 
         /* Cabecera Principal */
@@ -82,23 +70,12 @@
             background: linear-gradient(135deg, #ffffff, #f8f9fa);
             color: var(--text-main);
             text-align: center;
-            padding: 60px 20px 50px 20px;
+            padding: 70px 20px 50px 20px;
             border-bottom: 1px solid var(--border-color);
         }
 
-        .header-logo {
-            max-width: 220px;
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            margin-bottom: 25px;
-            border: 2px solid var(--border-color);
-            background: #000; /* Fondo por si la imagen tiene transparencias */
-        }
-
         header h1 {
-            font-size: 2.3rem;
+            font-size: 2.4rem;
             margin-bottom: 15px;
             max-width: 800px;
             margin-left: auto;
@@ -155,37 +132,67 @@
             font-size: 2rem;
         }
 
-        /* Servicios Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+        /* Listas Desplegables (Acordeón de Servicios) */
+        .accordion-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .service-card {
+        .accordion-item {
             background: #fafbfc;
-            padding: 30px;
-            border-radius: 10px;
+            border: 1px solid var(--border-color);
             border-left: 5px solid var(--primary-red);
-            border-top: 1px solid var(--border-color);
-            border-right: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            transition: transform 0.2s;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: box-shadow 0.2s;
         }
 
-        .service-card:hover {
-            transform: translateY(-3px);
+        .accordion-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
-        .service-card h3 {
-            margin-bottom: 12px;
+        .accordion-header {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 20px;
+            text-align: left;
+            font-size: 1.15rem;
+            font-weight: 600;
             color: var(--text-main);
-            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .service-card p {
+        .accordion-header::after {
+            content: '+';
+            font-size: 1.4rem;
+            color: var(--primary-red);
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .accordion-item.active .accordion-header::after {
+            transform: rotate(45deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            padding: 0 20px;
             color: var(--text-gray);
             font-size: 0.95rem;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 200px;
+            padding: 0 20px 20px 20px;
         }
 
         /* Bloque de Garantías */
@@ -245,7 +252,6 @@
             justify-content: center;
             font-weight: bold;
             font-size: 1.1rem;
-            box-shadow: 0 3px 8px rgba(211, 47, 47, 0.3);
         }
 
         .steps-list li strong {
@@ -302,16 +308,12 @@
 
     <!-- Navbar Superior -->
     <nav>
-        <a href="#" class="nav-logo-container">
-            <img src="logo.jpg" alt="Zona Académica Logo">
-            <span>Zona Académica</span>
-        </a>
+        <a href="#" class="nav-logo-text">📚 Zona Académica</a>
         <a href="https://wa.me/584125221950?text=Hola,%20necesito%20ayuda%20urgente%20con%20un%20trabajo" class="nav-btn" target="_blank">Contactar</a>
     </nav>
 
     <!-- Cabecera Principal -->
     <header>
-        <img src="logo.jpg" alt="Zona Académica Logo" class="header-logo">
         <h1>¿No entiendes tu tarea? Te ayudo con tareas, tesis y proyectos</h1>
         <p>Siempre de la mano contigo. Soluciones académicas profesionales, puntuales y 100% confidenciales.</p>
         <a href="https://wa.me/584125221950?text=Hola,%20necesito%20una%20cotización%20para%20un%20trabajo" class="btn-main" target="_blank">📲 Pedir cotización por WhatsApp</a>
@@ -319,22 +321,32 @@
 
     <div class="container">
         
-        <!-- Bloque de Servicios -->
+        <!-- Bloque de Servicios Desplegables -->
         <section>
             <h2>Nuestros Servicios</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Tareas y Prácticas</h3>
-                    <p>Resolución de guías de ejercicios, problemas matemáticos, estadísticas, ensayos y cuestionarios urgentes.</p>
+            <div class="accordion-container">
+                
+                <div class="accordion-item">
+                    <button class="accordion-header">Tareas y Prácticas</button>
+                    <div class="accordion-content">
+                        <p>Resolución de guías de ejercicios, problemas matemáticos, estadísticas, ensayos, cuestionarios y trabajos prácticos urgentes para cualquier materia o nivel universitario.</p>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <h3>Tesis y Grado</h3>
-                    <p>Asesoría integral desde el anteproyecto, redacción de capítulos, marcos teóricos, análisis de datos y normas APA.</p>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">Tesis y Grado</button>
+                    <div class="accordion-content">
+                        <p>Asesoría integral desde el anteproyecto, redacción de capítulos, marcos teóricos, metodología, análisis estadístico de datos y formato estricto bajo normas APA.</p>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <h3>Proyectos y Programación</h3>
-                    <p>Desarrollo de software, maquetas conceptuales, presentaciones ejecutivas, informes de pasantías y monografías.</p>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">Proyectos y Programación</button>
+                    <div class="accordion-content">
+                        <p>Desarrollo de software, maquetas conceptuales, presentaciones ejecutivas, informes de pasantías, monografías y proyectos técnicos especializados.</p>
+                    </div>
                 </div>
+
             </div>
         </section>
 
@@ -388,8 +400,22 @@
         💬
     </a>
 
+    <!-- Script para hacer funcionar las listas desplegables -->
+    <script>
+        const headers = document.querySelectorAll('.accordion-header');
+        headers.forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                // Cierra los demás si quieres que solo uno esté abierto a la vez (opcional)
+                // document.querySelectorAll('.accordion-item').forEach(i => { if(i !== item) i.classList.remove('active'); });
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+
 </body>
 </html>
+
 
 
 
