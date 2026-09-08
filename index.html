@@ -7,8 +7,8 @@
     <style>
         :root {
             --primary-color: #1e3a8a; /* Azul corporativo profundo */
-            --accent-color: #f97316;  /* Naranja vibrante para llamadas a la acción */
-            --bg-light: #f8fafc;      /* Fondo general muy limpio y suave */
+            --accent-color: #f97316;  /* Naranja vibrante */
+            --bg-light: #f8fafc;      
             --card-bg: #ffffff;
             --text-main: #1e293b;
             --text-gray: #64748b;
@@ -67,13 +67,17 @@
             background-color: #20ba5a;
         }
 
-        /* Cabecera Principal */
+        /* Cabecera Principal con Estilo Universitario de Fondo (Patrón de Libros/Lápices) */
         header {
-            background: linear-gradient(135deg, #eff6ff, #f8fafc);
-            color: var(--text-main);
+            position: relative;
+            background-color: #1e3a8a;
+            /* Patrón de fondo SVG sutil con siluetas universitarias (libros, lápices, notas) */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M20 20h20v20H20zM60 20h20v20H60zM20 60h20v20H20zM60 60h20v20H60z'/%3E%3Cpath d='M10 10h80v80H10zM50 0v100M0 50h100' stroke='%23ffffff' stroke-width='0.5' stroke-opacity='0.05'/%3E%3Ctext x='15' y='35' font-size='16'%3E📖%3C/text%3E%3Ctext x='65' y='35' font-size='16'%3E✏️%3C/text%3E%3Ctext x='15' y='85' font-size='16'%3E📐%3C/text%3E%3Ctext x='65' y='85' font-size='16'%3E🎓%3C/text%3E%3C/g%3E%3C/svg%3E"), 
+                              linear-gradient(135deg, #1e3a8a, #1d4ed8);
+            color: white;
             text-align: center;
-            padding: 70px 20px 50px 20px;
-            border-bottom: 1px solid var(--border-color);
+            padding: 80px 20px 60px 20px;
+            border-bottom: 4px solid var(--accent-color);
         }
 
         header h1 {
@@ -82,13 +86,13 @@
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
-            color: var(--primary-color);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
 
         header p {
             font-size: 1.15rem;
             margin-bottom: 30px;
-            color: var(--text-gray);
+            color: #cbd5e1;
             max-width: 650px;
             margin-left: auto;
             margin-right: auto;
@@ -347,7 +351,7 @@
         <a href="https://wa.me/584125221950?text=Hola,%20necesito%20ayuda%20urgente%20con%20un%20trabajo" class="nav-btn" target="_blank">Contactar</a>
     </nav>
 
-    <!-- Cabecera Principal -->
+    <!-- Cabecera Principal con Temática Universitaria -->
     <header>
         <h1>¿No entiendes tu tarea? Te ayudo con tareas, tesis y proyectos</h1>
         <p>Siempre de la mano contigo. Soluciones académicas profesionales, puntuales y 100% confidenciales.</p>
@@ -363,7 +367,7 @@
                 
                 <!-- Ingeniería, Electrónica y Electricidad -->
                 <div class="accordion-item">
-                    <button class="accordion-header">Ingeniería, Electrónica y Electricidad</button>
+                    <button class="accordion-header">📐 Ingeniería, Electrónica y Electricidad</button>
                     <div class="accordion-content">
                         <div class="category-subtitle">Ingeniería:</div>
                         <ul class="sublist">
@@ -390,7 +394,7 @@
 
                 <!-- Programación, Software y Programas -->
                 <div class="accordion-item">
-                    <button class="accordion-header">Programación, Software y Programas</button>
+                    <button class="accordion-header">💻 Programación, Software y Programas</button>
                     <div class="accordion-content">
                         <div class="category-subtitle">Programación:</div>
                         <ul class="sublist">
@@ -406,7 +410,7 @@
 
                 <!-- Economía, Finanzas y Redacción -->
                 <div class="accordion-item">
-                    <button class="accordion-header">Economía, Finanzas, Redacción y Tesis</button>
+                    <button class="accordion-header">📈 Economía, Finanzas, Redacción y Tesis</button>
                     <div class="accordion-content">
                         <div class="category-subtitle">Economía y Finanzas:</div>
                         <ul class="sublist">
@@ -423,7 +427,7 @@
 
                 <!-- Medicina y Enfermería -->
                 <div class="accordion-item">
-                    <button class="accordion-header">Medicina y Enfermería</button>
+                    <button class="accordion-header">🩺 Medicina y Enfermería</button>
                     <div class="accordion-content">
                         <ul class="sublist">
                             <li>Fisiología, Psicología e Histología</li>
@@ -498,6 +502,7 @@
 
 </body>
 </html>
+
 
 
 
