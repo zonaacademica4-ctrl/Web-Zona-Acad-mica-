@@ -6,11 +6,12 @@
     <title>Zona Académica | Siempre de la mano Contigo</title>
     <style>
         :root {
-            --primary-red: #d32f2f;
-            --bg-light: #f4f6f9;
+            --primary-color: #1e3a8a; /* Azul corporativo profundo */
+            --accent-color: #f97316;  /* Naranja vibrante para llamadas a la acción */
+            --bg-light: #f8fafc;      /* Fondo general muy limpio y suave */
             --card-bg: #ffffff;
-            --text-main: #212529;
-            --text-gray: #6c757d;
+            --text-main: #1e293b;
+            --text-gray: #64748b;
             --whatsapp-green: #25d366;
             --border-color: #e2e8f0;
         }
@@ -46,7 +47,7 @@
         .nav-logo-text {
             font-size: 1.25rem;
             font-weight: bold;
-            color: var(--primary-red);
+            color: var(--primary-color);
             text-decoration: none;
         }
 
@@ -68,7 +69,7 @@
 
         /* Cabecera Principal */
         header {
-            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            background: linear-gradient(135deg, #eff6ff, #f8fafc);
             color: var(--text-main);
             text-align: center;
             padding: 70px 20px 50px 20px;
@@ -76,12 +77,12 @@
         }
 
         header h1 {
-            font-size: 2.4rem;
+            font-size: 2.3rem;
             margin-bottom: 15px;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
-            color: #1a1a1a;
+            color: var(--primary-color);
         }
 
         header p {
@@ -128,7 +129,7 @@
 
         h2 {
             text-align: center;
-            color: var(--primary-red);
+            color: var(--primary-color);
             margin-bottom: 35px;
             font-size: 2rem;
         }
@@ -143,9 +144,9 @@
         }
 
         .accordion-item {
-            background: #fafbfc;
+            background: #f8fafc;
             border: 1px solid var(--border-color);
-            border-left: 5px solid var(--primary-red);
+            border-left: 6px solid var(--accent-color);
             border-radius: 8px;
             overflow: hidden;
             transition: box-shadow 0.2s;
@@ -173,7 +174,7 @@
         .accordion-header::after {
             content: '+';
             font-size: 1.4rem;
-            color: var(--primary-red);
+            color: var(--accent-color);
             font-weight: bold;
             transition: transform 0.3s;
         }
@@ -192,7 +193,7 @@
         }
 
         .accordion-item.active .accordion-content {
-            max-height: 500px; /* Suficiente espacio para listar las materias/temas */
+            max-height: 500px;
             padding: 0 25px 25px 25px;
         }
 
@@ -212,7 +213,7 @@
 
         .sublist li::before {
             content: "•";
-            color: var(--primary-red);
+            color: var(--accent-color);
             font-weight: bold;
             font-size: 1.2rem;
             position: absolute;
@@ -229,14 +230,15 @@
         }
 
         .feature-box {
-            padding: 20px;
-            background: #fafbfc;
+            padding: 25px 20px;
+            background: #f8fafc;
             border-radius: 8px;
             border: 1px solid var(--border-color);
+            border-top: 4px solid var(--primary-color);
         }
 
         .feature-box h4 {
-            color: var(--primary-red);
+            color: var(--primary-color);
             margin-bottom: 8px;
             font-size: 1.1rem;
         }
@@ -267,7 +269,7 @@
             position: absolute;
             left: 0;
             top: 0;
-            background: var(--primary-red);
+            background: var(--primary-color);
             color: white;
             width: 42px;
             height: 42px;
@@ -317,14 +319,14 @@
         footer {
             text-align: center;
             padding: 35px;
-            background: #212529;
-            color: #adb5bd;
+            background: #1e293b;
+            color: #94a3b8;
             font-size: 0.9rem;
             border-top: 1px solid var(--border-color);
         }
 
         footer a {
-            color: #ff8a80;
+            color: #38bdf8;
             text-decoration: none;
         }
     </style>
@@ -461,6 +463,7 @@
 
 </body>
 </html>
+
 
 
 
